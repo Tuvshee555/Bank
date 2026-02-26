@@ -1,15 +1,21 @@
 ﻿export default function KhanIcon({ className = "" }) {
-  const baseClass = "flex h-11 w-11 items-center justify-center rounded-full bg-[#e6f4ee]";
-
   return (
-    <div className={`${baseClass} ${className}`.trim()}>
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <circle cx="14" cy="14" r="14" fill="#0A8351" />
-        <path
-          d="M13.999 6.7c1.8 2.4 3.8 3.8 7 4.1-2.4 1.8-3.8 3.8-4.1 7-1.8-2.4-3.8-3.8-7-4.1 2.4-1.8 3.8-3.8 4.1-7Z"
-          fill="#F8D58B"
-        />
-      </svg>
-    </div>
+    <svg
+      width="42"
+      height="42"
+      viewBox="0 0 42 42"
+      fill="none"
+      aria-hidden="true"
+      className={className}
+    >
+      <circle cx="14" cy="14" r="9" fill="#0A8351" />
+      <circle cx="28" cy="14" r="9" fill="#0A8351" />
+      <circle cx="14" cy="28" r="9" fill="#0A8351" />
+      <circle cx="28" cy="28" r="9" fill="#0A8351" />
+      <circle cx="21" cy="21" r="8" fill="#F3CF84" />
+      <circle cx="18.2" cy="19.2" r="1.15" fill="#0A8351" />
+      <circle cx="23.8" cy="19.2" r="1.15" fill="#0A8351" />
+      <path d="M18.4 23.5c.7 1.3 1.7 2 2.6 2s1.9-.7 2.6-2" stroke="#0A8351" strokeWidth="1.4" strokeLinecap="round" />
+    </svg>
   );
 }

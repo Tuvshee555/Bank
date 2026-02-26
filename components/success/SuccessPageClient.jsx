@@ -35,9 +35,12 @@ export default function SuccessPageClient() {
   const timeText = useMemo(() => formatDateTime(timestamp), [timestamp]);
 
   return (
-    <main className="min-h-screen bg-[#ececec] text-[#101010]">
+    <main className="min-h-[100dvh] bg-[#ececec] text-[#101010]">
       <div aria-hidden="true" className="pointer-events-none select-none">
-        <div className="mx-auto w-full max-w-[390px] pb-[120px]">
+        <div
+          className="mx-auto w-full max-w-[390px] pb-[120px]"
+          style={{ paddingTop: "max(env(safe-area-inset-top), 8px)" }}
+        >
           <AccountHeader />
           <BalanceCard />
           <QuickActions />

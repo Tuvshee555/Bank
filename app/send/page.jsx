@@ -38,7 +38,7 @@ export default function SendPage() {
   }, [amount]);
 
   const compactIban = useMemo(() => iban.replace(/\s+/g, ""), [iban]);
-  const displayIban = compactIban ? `MN${compactIban}` : "MN";
+  const displayIban = compactIban ? `MN${iban.trim() || compactIban}` : "MN";
 
   const canContinue =
     amountNumber > 0 &&
