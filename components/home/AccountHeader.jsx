@@ -1,15 +1,15 @@
-﻿export default function AccountHeader() {
+export default function AccountHeader() {
   return (
-    <div className="mt-4 flex items-center justify-between px-4">
+    <div className="mt-2 flex items-center justify-between px-4">
       <div className="flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-full">
+        <div className="flex h-9 w-9 items-center justify-center">
           <svg
-            width="34"
-            height="34"
+            width="28"
+            height="28"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="#111"
-            strokeWidth="1.8"
+            stroke="#141414"
+            strokeWidth="1.9"
             strokeLinecap="round"
             strokeLinejoin="round"
             aria-hidden="true"
@@ -20,23 +20,23 @@
         </div>
 
         <div className="leading-tight">
-          <p className="text-[16px] font-medium text-[#1f1f1f]">Сайн байна уу?</p>
-          <p className="mt-1 text-[20px] font-bold text-[#111]">Г. ТҮВШИНСАЙХАН</p>
+          <p className="text-[16px] font-medium text-[#2d3339]">Сайн байна уу?</p>
+          <p className="mt-0.5 text-[20px] font-bold tracking-tight text-[#16181b]">Г. ТҮВШИНСАЙХАН</p>
         </div>
       </div>
 
       <div className="flex items-center gap-3">
         <button
-          className="flex h-[50px] w-[50px] items-center justify-center rounded-[14px] bg-[#f5f5f5]"
+          className="flex h-[50px] w-[50px] items-center justify-center rounded-[14px] bg-[#f2f2f2]"
           aria-label="Notifications"
         >
           <svg
-            width="28"
-            height="28"
+            width="24"
+            height="24"
             viewBox="0 0 24 24"
             fill="none"
             stroke="#111"
-            strokeWidth="1.8"
+            strokeWidth="1.9"
             strokeLinecap="round"
             strokeLinejoin="round"
             aria-hidden="true"
@@ -47,16 +47,16 @@
         </button>
 
         <button
-          className="flex h-[50px] w-[50px] items-center justify-center rounded-[14px] bg-[#f5f5f5]"
+          className="flex h-[50px] w-[50px] items-center justify-center rounded-[14px] bg-[#f2f2f2]"
           aria-label="Hide balance"
         >
           <svg
-            width="28"
-            height="28"
+            width="24"
+            height="24"
             viewBox="0 0 24 24"
             fill="none"
             stroke="#111"
-            strokeWidth="1.8"
+            strokeWidth="1.9"
             strokeLinecap="round"
             strokeLinejoin="round"
             aria-hidden="true"

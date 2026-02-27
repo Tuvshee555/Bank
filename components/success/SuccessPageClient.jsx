@@ -7,7 +7,6 @@ import BalanceCard from "../home/BalanceCard";
 import QuickActions from "../home/QuickActions";
 import LastTransactionAccount from "../home/LastTransactionAccount";
 import Transactions from "../home/Transactions";
-import BottomNav from "../home/BottomNav";
 import SuccessDrawer from "./SuccessDrawer";
 import { formatDateTime, formatMoney } from "./success-utils";
 
@@ -47,8 +46,6 @@ export default function SuccessPageClient() {
           <LastTransactionAccount />
           <Transactions />
         </div>
-
-        <BottomNav />
       </div>
 
       <SuccessDrawer

@@ -1,37 +1,29 @@
-﻿"use client";
-
-function getTodayDate() {
-  const now = new Date();
-  const year = now.getFullYear();
-  const month = String(now.getMonth() + 1).padStart(2, "0");
-  const day = String(now.getDate()).padStart(2, "0");
-  return `${year}.${month}.${day}`;
-}
+"use client";
 
 function TransactionRow({ time, description, balance, amount }) {
-  const amountColor = amount.startsWith("-") ? "text-[#b06b1f]" : "text-[#088451]";
+  const amountColor = amount.startsWith("-") ? "text-[#b36e24]" : "text-[#088451]";
 
   return (
     <div className="py-4">
       <div className="flex items-start justify-between">
         <div className="flex gap-3">
-          <div className="mt-1 flex h-12 w-12 items-center justify-center rounded-full bg-[#f2f2f2]">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#af6e22" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <div className="mt-1 flex h-12 w-12 items-center justify-center rounded-full bg-[#eeeeee]">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#b36e24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M12 19V5" />
               <path d="M6 11l6-6 6 6" />
             </svg>
           </div>
 
           <div>
-            {time ? <p className="text-[16px] text-[#1f1f1f]">{time}</p> : null}
-            <p className="mt-1 max-w-[170px] text-[16px] leading-5 text-[#141414]">{description}</p>
-            <p className="mt-2 text-[16px] text-[#1f1f1f]">Үлд: {balance}</p>
+            {time ? <p className="text-[16px] text-[#2d3238]">{time}</p> : null}
+            <p className="mt-1 max-w-[190px] text-[16px] font-medium leading-6 text-[#2a2f36]">{description}</p>
+            <p className="mt-2 text-[16px] font-semibold text-[#3d3f44]">Үлд: {balance}</p>
           </div>
         </div>
 
         <div className="flex items-center gap-3 pl-2">
-          <p className={`text-[18px] font-medium ${amountColor}`}>{amount}</p>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c5c5c5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <p className={`text-[18px] font-semibold ${amountColor}`}>{amount}</p>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c4c4c4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="m9 18 6-6-6-6" />
           </svg>
         </div>
@@ -41,7 +33,7 @@ function TransactionRow({ time, description, balance, amount }) {
 }
 
 export default function Transactions() {
-  const todayDate = getTodayDate();
+  const todayDate = "2026.02.25";
 
   const transactions = [
     {
@@ -78,34 +70,13 @@ export default function Transactions() {
       balance: "150,622.93",
       amount: "-12,400.00",
     },
-    {
-      id: "taxi",
-      time: "15:06",
-      description: "Taxi payment",
-      balance: "163,022.93",
-      amount: "-8,500.00",
-    },
-    {
-      id: "market",
-      time: "13:58",
-      description: "Market purchase",
-      balance: "171,522.93",
-      amount: "-31,200.00",
-    },
-    {
-      id: "salary",
-      time: "09:14",
-      description: "Salary income",
-      balance: "202,722.93",
-      amount: "+250,000.00",
-    },
   ];
 
   return (
-    <div className="mx-4 mt-3 rounded-[16px] bg-[#f7f7f7] p-4 pb-2">
-      <p className="text-[17px] font-medium text-[#088451]">{todayDate}</p>
+    <div className="mx-4 mt-3 rounded-[14px] bg-[#f4f4f4] px-4 pb-2 pt-3">
+      <p className="text-[17px] font-semibold text-[#0a8b58]">{todayDate}</p>
 
-      <div className="mt-1 max-h-[330px] overflow-y-auto pr-1">
+      <div className="mt-1">
         {transactions.map((transaction, index) => (
           <div key={transaction.id}>
             <TransactionRow
@@ -114,7 +85,7 @@ export default function Transactions() {
               balance={transaction.balance}
               amount={transaction.amount}
             />
-            {index < transactions.length - 1 ? <div className="h-px bg-[#e4e4e4]" /> : null}
+            {index < transactions.length - 1 ? <div className="h-px bg-[#dfdfdf]" /> : null}
           </div>
         ))}
       </div>
