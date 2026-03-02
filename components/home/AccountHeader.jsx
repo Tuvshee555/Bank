@@ -1,22 +1,10 @@
+
 export default function AccountHeader() {
   return (
     <div className="mt-2 flex items-center justify-between px-4">
       <div className="flex items-center gap-3">
-        <div className="flex h-9 w-9 items-center justify-center">
-          <svg
-            width="28"
-            height="28"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#141414"
-            strokeWidth="1.9"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            aria-hidden="true"
-          >
-            <path d="M4.5 19.5c1.8-3.4 4.7-5.2 7.5-5.2s5.7 1.8 7.5 5.2" />
-            <circle cx="12" cy="8.3" r="3.8" />
-          </svg>
+        <div className="flex h-[36px] w-[36px] items-center justify-center mt-1 mx-2">
+          <img src={"human.png"}/>
         </div>
 
         <div className="leading-tight">
