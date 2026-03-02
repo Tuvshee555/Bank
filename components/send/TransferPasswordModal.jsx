@@ -21,7 +21,7 @@ export default function TransferPasswordModal({
 
   return (
     <div className="fixed inset-0 z-40 bg-black/45 px-4 backdrop-blur-[2px]">
-      <div className="mx-auto mt-24 w-full max-w-[390px] rounded-[24px] bg-white p-5">
+      <div className="mx-auto mt-24 w-full  rounded-[24px] bg-white p-5">
         <div className="flex items-start justify-between">
           <WarningIcon />
           <button type="button" aria-label="Close" onClick={onClose} className="mt-2 text-[#111]">

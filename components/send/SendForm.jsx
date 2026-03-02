@@ -24,8 +24,8 @@ export default function SendForm({
     }`;
 
   return (
-    <div className="mx-auto w-full max-w-[390px] pb-8">
-      <div className="flex items-center gap-2 px-4 pt-4">
+    <div className="mx-auto w-full  pb-8">
+      {/* <div className="flex items-center gap-2 px-4 pt-4">
         <button
           type="button"
           onClick={onBack}
@@ -47,17 +47,18 @@ export default function SendForm({
           </svg>
         </button>
         <h1 className="text-[20px] font-bold">ХААН Банкны данс руу</h1>
-      </div>
+      </div> */}
+      <img src="headersend.jpg" className="w-full h-full"></img>
 
-      <section className="px-4 pt-4">
-        <p className="mb-2 text-[16px] text-[#3f4956]">Шилжүүлэх данс</p>
-        <div className="rounded-[16px] bg-[#06864a] px-4 py-2.5 text-white">
-          <div className="flex items-center justify-between text-[16px]">
+      <section className="px-4">
+        <p className="mb-2 text-[16px] text-[#3f4956] font-medium">Шилжүүлэх данс</p>
+        <div className="rounded-[8px] bg-[#06864a] px-4 py-2.5 text-white">
+          <div className="flex items-center justify-between text-[18px]">
             <p className="opacity-85">ХАРИЛ... {sourceIban}</p>
           </div>
 
           <div className="mt-2 flex items-end justify-between">
-            <p className="text-[20px] font-semibold leading-none">{formatMoney(sourceBalance)} ₮</p>
+            <p className="text-[19px] opacity-90 color-[#ffffe2] leading-none">{formatMoney(sourceBalance)} ₮</p>
             <svg
               width="22"
               height="22"
@@ -75,10 +76,10 @@ export default function SendForm({
         </div>
       </section>
 
-      <section className="px-4 pt-3">
-        <div className="overflow-hidden rounded-[20px] bg-[#008513]">
-          <div className="mx-[1px] mt-[1px] rounded-[18px] bg-[#f7f7f7] px-4 pb-5 pt-3">
-            <div className="mx-auto flex w-[78px] justify-center rounded-[12px] bg-[#efefef] py-1.5 text-[18px] font-medium text-[#101010]">
+      <section className="px-4 pt-2">
+        <div className="overflow-hidden rounded-[16px] bg-[#007316]">
+          <div className=" rounded-[4px] bg-[#f7f7f7] px-4 pb-5 pt-3 w-full">
+            <div className="mx-auto flex w-[78px] justify-center rounded-[8px]  bg-[#efefef] py-1.5 text-[20px] font-medium text-[#101010]">
               MNT
             </div>
 
@@ -91,38 +92,14 @@ export default function SendForm({
                 onFocus={() => onFieldFocus("amount")}
                 onBlur={onFieldBlur}
                 placeholder="0.00"
-                className="w-full bg-transparent text-center text-[58px] font-semibold leading-none text-[#191f28] outline-none placeholder:text-[#7a7d81]"
+                className="w-full bg-transparent text-center text-[40px] font-semibold leading-none text-[#191f28] outline-none placeholder:text-[#7a7d81]"
               />
               <div className="mx-auto mt-3 h-[2px] w-[94px] bg-[#d4f3df]" />
             </div>
           </div>
 
           <div className="flex items-center justify-between px-4 py-2.5 text-white">
-            <div className="mx-auto flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#16b360]/20">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path
-                    d="M8 6a4 4 0 0 1 8 0v2h2a4 4 0 0 1 0 8h-2v2a4 4 0 0 1-8 0v-2H6a4 4 0 0 1 0-8h2V6Z"
-                    fill="#2ef08f"
-                  />
-                </svg>
-              </div>
-              <p className="text-[18px] font-semibold tracking-tight">DiGi Pay</p>
-            </div>
-
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#d7f8e7"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <path d="m9 18 6-6-6-6" />
-            </svg>
+            <img src="logoDiji.jpg"></img>
           </div>
         </div>
       </section>
@@ -130,7 +107,7 @@ export default function SendForm({
       <section className="px-4 pt-4">
         <button
           type="button"
-          className="flex w-full items-center justify-center gap-2 rounded-[14px] bg-[#f6f6f6] py-4 text-[18px] text-[#0b8a53]"
+          className="flex w-full items-center justify-center gap-2 rounded-[14px] bg-[#f5f5f5] py-4 text-[19px] font-medium text-[#0b8a53] "
         >
           <svg
             width="22"
@@ -163,13 +140,12 @@ export default function SendForm({
               onFocus={() => onFieldFocus("iban")}
               onBlur={onFieldBlur}
               placeholder="IBAN дугаар"
-              className="w-full bg-transparent text-[#111] outline-none placeholder:text-[#5f6978]"
+              className="w-full bg-transparent text-[#111] outline-none placeholder:text-[#5f6978]  text-[18px] font-medium+"
             />
           </div>
         </div>
 
         <div className={fieldClass("receiver")}>
-          <p className="text-[17px] text-[#36404d]">Хүлээн авагч</p>
           <input
             type="text"
             value={receiver}
@@ -177,12 +153,11 @@ export default function SendForm({
             onFocus={() => onFieldFocus("receiver")}
             onBlur={onFieldBlur}
             placeholder="Хүлээн авагч"
-            className="mt-1.5 w-full bg-transparent text-[16px] text-[#111111] outline-none placeholder:text-[#5f6978]"
+            className="mt-1.5 w-full bg-transparent text-[16px] text-[#111111] outline-none placeholder:text-[#5f6978]  text-[18px] font-medium+"
           />
         </div>
 
         <div className={fieldClass("note")}>
-          <p className="text-[17px] text-[#36404d]">Гүйлгээний утга</p>
           <input
             type="text"
             value={note}
@@ -190,7 +165,7 @@ export default function SendForm({
             onFocus={() => onFieldFocus("note")}
             onBlur={onFieldBlur}
             placeholder="Гүйлгээний утга"
-            className="mt-1.5 w-full bg-transparent text-[16px] text-[#111111] outline-none placeholder:text-[#5f6978]"
+            className="mt-1.5 w-full bg-transparent text-[16px] text-[#111111] outline-none placeholder:text-[#5f6978]  text-[18px] font-medium+"
           />
         </div>
 
@@ -219,7 +194,7 @@ export default function SendForm({
           onClick={onContinue}
           disabled={!canContinue}
           className={`w-full rounded-[15px] py-3.5 text-[20px] font-medium transition-colors ${
-            canContinue ? "bg-[#008a4a] text-white" : "bg-[#d4d9de] text-[#8a9098]"
+            canContinue ? "bg-[#017a47] text-white" : "bg-[#017a47] text-white"
           }`}
         >
           Үргэлжлүүлэх

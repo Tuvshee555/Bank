@@ -37,7 +37,7 @@ export default function SuccessPageClient() {
     <main className="min-h-[100dvh] bg-[#ececec] text-[#101010]">
       <div aria-hidden="true" className="pointer-events-none select-none">
         <div
-          className="mx-auto w-full max-w-[390px] pb-[120px]"
+          className="mx-auto w-full  pb-[120px]"
           style={{ paddingTop: "max(env(safe-area-inset-top), 8px)" }}
         >
           <AccountHeader />

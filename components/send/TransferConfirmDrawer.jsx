@@ -32,7 +32,7 @@ export default function TransferConfirmDrawer({
         className="absolute inset-0 h-full w-full bg-white/38 backdrop-blur-[6px]"
       />
 
-      <div className="fixed inset-x-0 bottom-0 top-[106px] z-40 mx-auto w-full max-w-[390px] rounded-t-[20px] bg-[#ececec] px-4 pb-6 pt-4 khan-drawer-content-enter">
+      <div className="fixed inset-x-0 bottom-0 top-[106px] z-40 mx-auto w-full rounded-t-[20px] bg-[#ececec] px-4 pb-6 pt-4 khan-drawer-content-enter">
         <div className="h-full overflow-y-auto pb-[max(6px,env(safe-area-inset-bottom))]">
           <h2 className="text-center text-[24px] font-semibold leading-none text-[#0a8a53]">Баталгаажуулалт</h2>
 
