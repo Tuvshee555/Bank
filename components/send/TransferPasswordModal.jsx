@@ -20,11 +20,25 @@ export default function TransferPasswordModal({
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-40 bg-black/45 px-4 backdrop-blur-[2px]">
-      <div className="mx-auto mt-40 w-full  rounded-[24px] bg-white p-5">
-        <div className="flex items-start justify-between">
-          <WarningIcon />
-          <button type="button" aria-label="Close" onClick={onClose} className="mt-2 text-[#111]">
+    <dialog
+      open
+      onCancel={(event) => {
+        event.preventDefault();
+        onClose();
+      }}
+      className="fixed inset-0 z-40 m-0 h-full w-full bg-transparent p-4"
+    >
+      <div className="absolute inset-0 bg-black/45" onClick={onClose} />
+      <div className="relative mx-auto mt-40 w-full rounded-[16px] bg-white p-5">
+        <div className="relative flex items-start justify-center">
+          {/* <WarningIcon /> */}
+          <img src={"warning.png"} className="h-16 w-16" />
+          <button
+            type="button"
+            aria-label="Close"
+            onClick={onClose}
+            className="absolute right-0 top-0 text-[#111]"
+          >
             <svg width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path
                 d="M18 6 6 18M6 6l12 12"
@@ -37,7 +51,7 @@ export default function TransferPasswordModal({
           </button>
         </div>
 
-        <h3 className="mt-2 text-center text-[44px] font-semibold leading-none">Гүйлгээний нууц үг</h3>
+        <h3 className="mt-2 text-center text-[20px] font-semibold leading-none">Гүйлгээний нууц үг</h3>
         <p className="mt-2 text-center text-[18px] text-[#5b6471]">Гүйлгээний нууц үгээ оруулан баталгаажуулна уу.</p>
 
         <div
@@ -57,7 +71,7 @@ export default function TransferPasswordModal({
             aria-label="Toggle password visibility"
             className="text-[#101010]"
           >
-            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <svg className="text-[#151515]" width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path
                 d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z"
                 stroke="currentColor"
@@ -84,12 +98,12 @@ export default function TransferPasswordModal({
           onClick={onSubmit}
           disabled={!password.trim()}
           className={`mt-5 w-full rounded-[12px] py-3 text-[20px] font-medium transition-colors ${
-            password.trim() ? "bg-[#008a4a] text-white" : "bg-[#d6dce2] text-[#98a0aa]"
+            password.trim() ? "bg-[#027846] text-white" : "bg-[#d6dce2] text-[#98a0aa]"
           }`}
         >
           Баталгаажуулах
         </button>
       </div>
-    </div>
+    </dialog>
   );
 }

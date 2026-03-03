@@ -53,7 +53,7 @@ export default function SuccessDrawer({ amountText, balanceText, timeText, recei
                 <p className="text-[16px] font-semibold leading-tight text-[#1a2029]">{receiver}</p>
                 <p className="mt-1.5 text-[16px] leading-tight text-[#1a2029]">{iban}</p>
               </div>
-              <KhanIcon className="shrink-0" />
+              <img src={"appLogo.png"} className="h-15 w-15"></img>
             </div>
           </section>
 
