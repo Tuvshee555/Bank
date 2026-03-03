@@ -1,4 +1,5 @@
-﻿import { formatMoney } from "./send-utils";
+import { useEffect, useRef } from "react";
+import { formatMoney } from "./send-utils";
 
 export default function SendForm({
   sourceIban,
@@ -22,6 +23,23 @@ export default function SendForm({
     `rounded-[14px] border bg-[#f6f6f6] px-4 py-3 transition-colors ${
       focusedField === name ? "border-[#0a8a52]" : "border-transparent"
     }`;
+
+  const amountInputRef = useRef(null);
+  const amountDisplay = amount ? `${amount}.00` : "";
+
+  const placeAmountCaret = () => {
+    const input = amountInputRef.current;
+    if (!input) return;
+    const caretPosition = amount.length;
+    requestAnimationFrame(() => {
+      input.setSelectionRange(caretPosition, caretPosition);
+    });
+  };
+
+  useEffect(() => {
+    if (document.activeElement !== amountInputRef.current) return;
+    placeAmountCaret();
+  }, [amount]);
 
   return (
     <div className="mx-auto w-full  pb-12">
@@ -58,7 +76,7 @@ export default function SendForm({
           </div>
 
           <div className="mt-2 flex items-end justify-between">
-            <p className="text-[19px] opacity-90 color-[#ffffe2] leading-none">{formatMoney(sourceBalance)} ₮</p>
+            <p className="text-[19px] opacity-90 color-[#ffffe2] leading-none">{formatMoney(sourceBalance)} ?</p>
             <svg
               width="22"
               height="22"
@@ -87,11 +105,17 @@ export default function SendForm({
 
             <div className="mt-6 text-center">
               <input
+                ref={amountInputRef}
                 type="text"
-                inputMode="decimal"
-                value={amount}
+                inputMode="numeric"
+                value={amountDisplay}
                 onChange={(event) => onAmountChange(event.target.value)}
-                onFocus={() => onFieldFocus("amount")}
+                onFocus={() => {
+                  onFieldFocus("amount");
+                  placeAmountCaret();
+                }}
+                onClick={placeAmountCaret}
+                onKeyUp={placeAmountCaret}
                 onBlur={onFieldBlur}
                 placeholder="0.00"
                 className="w-full bg-transparent text-center text-[40px] font-semibold leading-none text-[#191f28] outline-none placeholder:text-[#7a7d81]"
@@ -205,3 +229,4 @@ export default function SendForm({
     </div>
   );
 }
+

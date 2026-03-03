@@ -20,7 +20,8 @@ export function sanitizeAmount(value) {
 }
 
 export function sanitizeAmountFixed(value) {
-  return value.replace(/[^\d]/g, "");
+  const [whole = ""] = value.split(".");
+  return whole.replace(/[^\d]/g, "");
 }
 
 export function sanitizeIban(value) {
