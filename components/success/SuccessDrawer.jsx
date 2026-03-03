@@ -30,35 +30,35 @@ export default function SuccessDrawer({ amountText, balanceText, timeText, recei
 
       <div className="fixed inset-x-0 bottom-0 top-[84px] z-30 mx-auto w-full max-w-[full] rounded-t-[22px] bg-[#ececec] px-4 pb-6 pt-3 khan-drawer-content-enter">
         <div className="h-full overflow-y-auto pb-[max(6px,env(safe-area-inset-bottom))]">
-          <section className="rounded-[14px] bg-[#f6f6f6] px-4 py-7 text-center">
+          <section className="rounded-[14px] bg-[#ffffff] px-4 py-7 text-center">
             <CheckIcon />
             <h1 className="mt-4 text-[24px] font-semibold leading-none text-[#10151d]">Гүйлгээ амжилттай.</h1>
             <p className="mt-4 whitespace-nowrap text-[32px] font-semibold leading-none text-[#10151d]">{amountText} MNT</p>
             <p className="mt-4 text-[16px] font-medium text-[#6a7481]">{timeText}</p>
           </section>
 
-          <section className="mt-3 rounded-[12px] bg-[#f6f6f6] px-4 py-4">
+          <section className="mt-3 rounded-[12px] bg-[#ffffff] px-4 py-4">
             <div className="flex items-center justify-between">
               <p className="text-[16px] font-medium text-[#5e6876]">Дансны үлдэгдэл</p>
               <EyeIcon />
             </div>
-            <p className="mt-2 text-[16px] font-medium text-[#1a2029]">{balanceText} MNT</p>
+            <p className="mt-2 text-[16px] font-semibold  text-[#1a2029]">{balanceText} MNT</p>
           </section>
 
-          <section className="mt-3 rounded-[12px] bg-[#f6f6f6] px-4 py-4">
+          <section className="mt-3 rounded-[12px] bg-[#ffffff] px-4 py-4">
             <p className="text-[16px] font-medium text-[#5e6876]">Хүлээн авагч</p>
-            <div className="mt-2 flex items-end justify-between gap-3">
+            <div className=" flex items-end justify-between gap-3">
               <div>
                 <p className="text-[16px] font-semibold leading-tight text-[#1a2029]">{receiver}</p>
-                <p className="mt-1.5 text-[16px] leading-tight text-[#1a2029]">{iban}</p>
+                <p className="mt-1.5 text-[16px] font-semibold leading-tight text-[#1a2029]">{iban}</p>
               </div>
               <img src={"appLogo.png"} className="h-15 w-15"></img>
             </div>
           </section>
 
-          <section className="mt-3 rounded-[12px] bg-[#f6f6f6] px-4 py-4">
+          <section className="mt-3 rounded-[12px] bg-[#ffffff] px-4 py-4">
             <p className="text-[16px] font-medium text-[#5e6876]">Гүйлгээний утга</p>
-            <p className="mt-2 text-[16px] leading-tight text-[#1a2029] break-words">{note}</p>
+            <p className="mt-2 text-[16px] font-semibold leading-tight text-[#1a2029] break-words">{note}</p>
           </section>
 
           <div className="mt-4 grid grid-cols-2 gap-3">

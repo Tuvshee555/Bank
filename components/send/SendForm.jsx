@@ -168,7 +168,7 @@ export default function SendForm({
               onFocus={() => onFieldFocus("iban")}
               onBlur={onFieldBlur}
               placeholder="IBAN дугаар"
-              className="w-full bg-transparent text-[#111] outline-none placeholder:text-[#5f6978]  text-[18px] font-[5]"
+              className="w-full bg-transparent text-[#111] outline-none placeholder:text-[#5f6978]  text-[18px] font-medium"
             />
           </div>
         </div>
@@ -181,7 +181,7 @@ export default function SendForm({
             onFocus={() => onFieldFocus("receiver")}
             onBlur={onFieldBlur}
             placeholder="Хүлээн авагч"
-            className="mt-1.5 w-full bg-transparent text-[16px] text-[#111111] outline-none placeholder:text-[#5f6978]  text-[18px] font-[5]"
+            className="mt-1.5 w-full bg-transparent text-[16px] text-[#111111] outline-none placeholder:text-[#5f6978]  text-[18px] font-medium"
           />
         </div>
 
@@ -193,7 +193,7 @@ export default function SendForm({
             onFocus={() => onFieldFocus("note")}
             onBlur={onFieldBlur}
             placeholder="Гүйлгээний утга"
-            className="mt-1.5 w-full bg-transparent text-[16px] text-[#111111] outline-none placeholder:text-[#5f6978]  text-[18px] font-[5]"
+            className="mt-1.5 w-full bg-transparent text-[16px] text-[#111111] outline-none placeholder:text-[#5f6978]  text-[18px] font-medium"
           />
         </div>
 

@@ -63,7 +63,7 @@ export default function TransferPasswordModal({
             type={passwordVisible ? "text" : "password"}
             value={password}
             onChange={(event) => onPasswordChange(event.target.value)}
-            className="h-16 w-full bg-transparent text-[28px] outline-none"
+            className="h-12 w-full bg-transparent text-[28px] outline-none"
           />
           <button
             type="button"
