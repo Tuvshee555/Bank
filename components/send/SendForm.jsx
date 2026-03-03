@@ -25,12 +25,14 @@ export default function SendForm({
     }`;
 
   const amountInputRef = useRef(null);
-  const amountDisplay = amount ? `${amount}.00` : "";
+  const formattedAmount = amount ? Number(amount).toLocaleString("en-US") : "";
+  const amountDisplay = formattedAmount ? `${formattedAmount}.00` : "";
+  const amountCaretPosition = formattedAmount.length;
 
   const placeAmountCaret = () => {
     const input = amountInputRef.current;
     if (!input) return;
-    const caretPosition = amount.length;
+    const caretPosition = amountCaretPosition;
     requestAnimationFrame(() => {
       input.setSelectionRange(caretPosition, caretPosition);
     });
