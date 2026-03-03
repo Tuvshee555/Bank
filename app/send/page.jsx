@@ -9,7 +9,7 @@ import {
   SOURCE_BALANCE,
   SOURCE_IBAN,
   TRANSFER_FEE,
-  sanitizeAmount,
+  sanitizeAmountFixed,
   sanitizeIban,
 } from "../../components/send/send-utils";
 
@@ -87,7 +87,7 @@ export default function SendPage() {
         sourceIban={SOURCE_IBAN}
         sourceBalance={SOURCE_BALANCE}
         amount={amount}
-        onAmountChange={(value) => setAmount(sanitizeAmount(value))}
+        onAmountChange={(value) => setAmount(sanitizeAmountFixed(value))}
         iban={iban}
         onIbanChange={(value) => setIban(sanitizeIban(value))}
         receiver={receiver}
