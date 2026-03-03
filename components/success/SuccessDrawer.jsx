@@ -1,9 +1,8 @@
-﻿import KhanIcon from "../icons/KhanIcon";
-
+﻿
 function CheckIcon() {
   return (
     <svg width="90" height="90" viewBox="0 0 120 120" fill="none" aria-hidden="true" className="mx-auto">
-      <circle cx="60" cy="60" r="52" fill="#14995A" />
+      <circle cx="60" cy="60" r="52" fill="#027846" />
       <path d="M35 61 53 79 86 46" stroke="white" strokeWidth="10" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
