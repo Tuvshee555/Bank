@@ -34,11 +34,11 @@ export default function TransferConfirmDrawer({
 
       <div className="fixed inset-x-0 bottom-0 top-[106px] z-40 mx-auto w-full rounded-t-[20px] bg-[#ececec] px-4 pb-6 pt-4 khan-drawer-content-enter">
         <div className="h-full overflow-y-auto pb-[max(6px,env(safe-area-inset-bottom))]">
-          <h2 className="text-center text-[24px] font-semibold leading-none text-[#0a8a53]">Баталгаажуулалт</h2>
+          <h2 className="text-center text-[24px] font-medium leading-none text-[#1e825d]">Баталгаажуулалт</h2>
 
-          <div className="mt-4 flex gap-2 rounded-[10px] bg-[#f6e9c6] px-4 py-3 text-[#dc7f18]">
+          <div className="mt-4 flex gap-2 rounded-[10px] bg-[#fef1c7] px-4 py-3 text-[#dc7f18]">
             <WarningBadgeIcon />
-            <p className="text-[14px] leading-[1.35]">
+            <p className="text-[18px] font-medium px-2   leading-[1.35]">
               Та гүйлгээ хийхээсээ өмнө банк, хүлээн авагчийн мэдээлэл, дансны дугаар, мөнгөн дүнг дахин хянаж
               баталгаажуулна уу.
             </p>
@@ -48,7 +48,7 @@ export default function TransferConfirmDrawer({
             <div className="mx-auto flex w-[72px] justify-center rounded-[10px] bg-[#dfe3e9] py-1 text-[18px] font-medium text-[#9ca3ad]">
               MNT
             </div>
-            <p className="mt-4 text-[30px] font-semibold leading-none text-[#1f232a]">{formatMoney(amountNumber || 0)}</p>
+            <p className="mt-6 text-[30px] font-semibold leading-none text-[#1f232a]">{formatMoney(amountNumber || 0)}</p>
             <div className="mx-auto mt-2.5 h-[2px] w-[96px] bg-[#d6efe3]" />
           </div>
 
@@ -69,14 +69,14 @@ export default function TransferConfirmDrawer({
           </div>
 
           <div className="flex items-center justify-between px-1 pb-4 pt-4">
-            <span className="text-[16px] font-medium text-[#2b3038]">Шимтгэл</span>
-            <span className="text-[16px] font-medium text-[#2b3038]">{transferFee} ₮</span>
+            <span className="text-[16px] font-semibold text-[#2b3038]">Шимтгэл</span>
+            <span className="text-[16px] font-semibold text-[#2b3038]">{transferFee} ₮</span>
           </div>
 
           <button
             type="button"
             onClick={onConfirm}
-            className="w-full rounded-[12px] bg-[#02884c] py-3.5 text-[18px] font-semibold text-white"
+            className="w-full rounded-[12px] bg-[#027846] py-3.5 text-[18px] font-medium text-white"
           >
             Гүйлгээ хийх
           </button>

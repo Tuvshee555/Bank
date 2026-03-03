@@ -24,8 +24,8 @@ export default function SendForm({
     }`;
 
   return (
-    <div className="mx-auto w-full  pb-8">
-      {/* <div className="flex items-center gap-2 px-4 pt-4">
+    <div className="mx-auto w-full  pb-12">
+      <div className="flex items-center gap-2 px-4 pt-4">
         <button
           type="button"
           onClick={onBack}
@@ -47,11 +47,11 @@ export default function SendForm({
           </svg>
         </button>
         <h1 className="text-[20px] font-bold">ХААН Банкны данс руу</h1>
-      </div> */}
-      <img src="headersend.jpg" className="w-full h-full"></img>
+      </div>
+      {/* <img src="headersend.jpg" className="w-full h-full"></img> */}
 
       <section className="px-4">
-        <p className="mb-2 text-[16px] text-[#3f4956] font-medium">Шилжүүлэх данс</p>
+        <p className="mb-2 mt-4 text-[16px] text-[#3f4956] font-medium">Шилжүүлэх данс</p>
         <div className="rounded-[8px] bg-[#06864a] px-4 py-2.5 text-white">
           <div className="flex items-center justify-between text-[18px]">
             <p className="opacity-85">ХАРИЛ... {sourceIban}</p>

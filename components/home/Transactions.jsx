@@ -16,13 +16,13 @@ function TransactionRow({ time, description, balance, amount }) {
 
           <div>
             {time ? <p className="text-[16px] text-[#2d3238]">{time}</p> : null}
-            <p className="mt-1 max-w-[190px] text-[16px] font-medium leading-6 text-[#2a2f36]">{description}</p>
-            <p className="mt-2 text-[16px] font-semibold text-[#3d3f44]">Үлд: {balance}</p>
+            <p className="mt-1 max-w-[190px] text-[16px] font-medium leading-6">{description}</p>
+            <p className="mt-2 text-[16px] font-medium ">Үлд: {balance}</p>
           </div>
         </div>
 
         <div className="flex items-center gap-3 pl-2">
-          <p className={`text-[18px] font-semibold ${amountColor}`}>{amount}</p>
+          <p className={`text-[18px] font-medium ${amountColor}`}>{amount}</p>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c4c4c4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="m9 18 6-6-6-6" />
           </svg>
@@ -73,8 +73,8 @@ export default function Transactions() {
   ];
 
   return (
-    <div className="mx-4 mt-3 rounded-[14px] bg-[#f4f4f4] px-4 pb-2 pt-3">
-      <p className="text-[17px] font-semibold text-[#0a8b58]">{todayDate}</p>
+    <div className="mx-4 mt-3 rounded-[14px] bg-[white] px-4 pb-2 pt-3">
+      <p className="text-[17px] font-medium text-[#0a8b58]">{todayDate}</p>
 
       <div className="mt-1">
         {transactions.map((transaction, index) => (

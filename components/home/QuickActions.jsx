@@ -44,13 +44,16 @@ export default function QuickActions() {
   ];
 
   return (
-    <div className="mx-4 mt-5 grid grid-cols-4 gap-3">
-      {items.map((item) => (
-        <div key={item.label} className="flex h-[96px] flex-col items-center justify-center rounded-[14px] border border-[#ececec] bg-[#f4f4f4]">
-          <QuickActionIcon type={item.id} />
-          <p className="mt-2 text-[16px] font-medium text-[#373c42]">{item.label}</p>
-        </div>
-      ))}
+    // <div className="mx-4 mt-5 grid grid-cols-4 gap-3">
+    //   {items.map((item) => (
+    //     <div key={item.label} className="flex h-[96px] flex-col items-center justify-center rounded-[14px] border border-[#ececec] bg-[#f4f4f4]">
+    //       <QuickActionIcon type={item.id} />
+    //       <p className="mt-2 text-[16px] font-medium text-[#373c42]">{item.label}</p>
+    //     </div>
+    //   ))}
+    // </div>
+    <div>
+      <img src={"logos4.jpg"} />
     </div>
   );
 }
