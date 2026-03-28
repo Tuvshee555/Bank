@@ -64,8 +64,12 @@ export default function SendPage() {
     setPassword("");
   };
 
+  const [transferLoading, setTransferLoading] = useState(false);
+
   const submitTransfer = () => {
     if (!password.trim()) return;
+
+    setTransferLoading(true);
 
     const params = new URLSearchParams({
       amount: amountNumber.toFixed(2),
@@ -78,7 +82,9 @@ export default function SendPage() {
       at: String(Date.now()),
     });
 
-    router.push(`/success?${params.toString()}`);
+    setTimeout(() => {
+      router.push(`/success?${params.toString()}`);
+    }, 5000);
   };
 
   return (
@@ -121,6 +127,7 @@ export default function SendPage() {
         onTogglePasswordVisibility={() => setPasswordVisible((previous) => !previous)}
         onClose={closePasswordModal}
         onSubmit={submitTransfer}
+        loading={transferLoading}
       />
     </main>
   );

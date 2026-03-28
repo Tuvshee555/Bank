@@ -60,7 +60,7 @@ export default function TransferConfirmDrawer({
                 <p className="text-[16px] font-semibold leading-tight text-[#1e232a]">{receiver || "-"}</p>
                 <p className="mt-1.5 text-[16px] leading-tight text-[#1e232a]">{displayIban}</p>
               </div>
-              <img src={"appLogo.png"} className="h-15 w-15"></img>
+              <img src="/appLogo.png" alt="" className="h-15 w-15" />
             </div>
           </div>
 

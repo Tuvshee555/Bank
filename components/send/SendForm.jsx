@@ -78,7 +78,7 @@ export default function SendForm({
           </div>
 
           <div className="mt-2 flex items-end justify-between">
-            <p className="text-[19px] opacity-90 color-[#ffffe2] leading-none">{formatMoney(sourceBalance)} ?</p>
+            <p className="text-[19px] opacity-90 leading-none">{formatMoney(sourceBalance)} ₮</p>
             <svg
               width="22"
               height="22"
@@ -126,9 +126,7 @@ export default function SendForm({
             </div>
           </div>
 
-          <div className="flex items-center justify-between px-4 py-2.5 text-white">
-            <img src="logoDiji.jpg"></img>
-          </div>
+          <img src="/logoDiji.jpg" alt="DiGi Pay" className="w-full block" />
         </div>
       </section>
 
@@ -222,7 +220,7 @@ export default function SendForm({
           onClick={onContinue}
           disabled={!canContinue}
           className={`w-full rounded-[15px] py-3.5 text-[20px] font-medium transition-colors ${
-            canContinue ? "bg-[#017a47] text-white" : "bg-[#017a47] text-white"
+            canContinue ? "bg-[#017a47] text-white" : "bg-[#c8d5cc] text-[#8a9e94]"
           }`}
         >
           Үргэлжлүүлэх

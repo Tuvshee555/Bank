@@ -1,13 +1,3 @@
-﻿function WarningIcon() {
-  return (
-    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#fff6df]">
-      <div className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#d67b12] text-[24px] leading-none text-[#d67b12]">
-        !
-      </div>
-    </div>
-  );
-}
-
 export default function TransferPasswordModal({
   open,
   password,
@@ -16,6 +6,7 @@ export default function TransferPasswordModal({
   onTogglePasswordVisibility,
   onClose,
   onSubmit,
+  loading,
 }) {
   if (!open) return null;
 
@@ -24,19 +15,39 @@ export default function TransferPasswordModal({
       open
       onCancel={(event) => {
         event.preventDefault();
-        onClose();
+        if (!loading) onClose();
       }}
       className="fixed inset-0 z-40 m-0 h-full w-full bg-transparent p-4"
     >
-      <div className="absolute inset-0 bg-black/45" onClick={onClose} />
+      <div className="absolute inset-0 bg-black/45" onClick={loading ? undefined : onClose} />
       <div className="relative mx-auto mt-40 w-full rounded-[16px] bg-white p-5">
+        {loading && (
+          <div className="absolute inset-0 z-10 flex flex-col items-center justify-center rounded-[16px] bg-white/80">
+            <svg
+              className="animate-spin"
+              width="56"
+              height="56"
+              viewBox="0 0 56 56"
+              fill="none"
+              aria-label="Уншиж байна"
+            >
+              <circle cx="28" cy="28" r="22" stroke="#e0ede8" strokeWidth="5" />
+              <path
+                d="M28 6a22 22 0 0 1 22 22"
+                stroke="#027846"
+                strokeWidth="5"
+                strokeLinecap="round"
+              />
+            </svg>
+            <p className="mt-4 text-[15px] font-medium text-[#027846]">Баталгаажуулж байна...</p>
+          </div>
+        )}
         <div className="relative flex items-start justify-center">
-          {/* <WarningIcon /> */}
-          <img src={"warning.png"} className="h-16 w-16" />
+          <img src="/warning.png" alt="" className="h-16 w-16" />
           <button
             type="button"
             aria-label="Close"
-            onClick={onClose}
+            onClick={loading ? undefined : onClose}
             className="absolute right-0 top-0 text-[#111]"
           >
             <svg width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -96,9 +107,9 @@ export default function TransferPasswordModal({
         <button
           type="button"
           onClick={onSubmit}
-          disabled={!password.trim()}
+          disabled={!password.trim() || loading}
           className={`mt-5 w-full rounded-[12px] py-3 text-[20px] font-medium transition-colors ${
-            password.trim() ? "bg-[#027846] text-white" : "bg-[#d6dce2] text-[#98a0aa]"
+            password.trim() && !loading ? "bg-[#027846] text-white" : "bg-[#d6dce2] text-[#98a0aa]"
           }`}
         >
           Баталгаажуулах

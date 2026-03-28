@@ -2,23 +2,29 @@
 function CheckIcon() {
   return (
     <svg width="90" height="90" viewBox="0 0 120 120" fill="none" aria-hidden="true" className="mx-auto">
-      <circle cx="60" cy="60" r="52" fill="#027846" />
+      <circle cx="60" cy="60" r="52" fill="#1d8b4c" />
       <path d="M35 61 53 79 86 46" stroke="white" strokeWidth="10" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
 
-function EyeIcon() {
+function EyeIcon({ size = 28 }) {
   return (
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+    >
       <path
         d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z"
-        stroke="#0f1722"
+        stroke="#262626"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <circle cx="12" cy="12" r="3" stroke="#0f1722" strokeWidth="2" />
+      <circle cx="12" cy="12" r="3" stroke="#262626" strokeWidth="2" />
     </svg>
   );
 }
@@ -32,32 +38,37 @@ export default function SuccessDrawer({ amountText, balanceText, timeText, recei
         <div className="h-full overflow-y-auto pb-[max(6px,env(safe-area-inset-bottom))]">
           <section className="rounded-[14px] bg-[#ffffff] px-4 py-7 text-center">
             <CheckIcon />
-            <h1 className="mt-4 text-[24px] font-semibold leading-none text-[#10151d]">Гүйлгээ амжилттай.</h1>
-            <p className="mt-4 whitespace-nowrap text-[32px] font-semibold leading-none text-[#10151d]">{amountText} MNT</p>
-            <p className="mt-4 text-[16px] font-medium text-[#6a7481]">{timeText}</p>
+            <h1 className="mt-4 text-[24px] font-bold leading-none text-[#10151d]">Гүйлгээ амжилттай.</h1>
+            <p className="mt-6 whitespace-nowrap text-[32px] font-bold leading-none text-[#10151d]">{amountText} MNT</p>
+            <p className="mt-4 text-[20px] font-medium text-[#6a7481]">{timeText}</p>
           </section>
 
-          <section className="mt-3 rounded-[12px] bg-[#ffffff] px-4 py-4">
-            <div className="flex items-center justify-between">
-              <p className="text-[16px] font-medium text-[#5e6876]">Дансны үлдэгдэл</p>
-              <EyeIcon />
+          <section className="mt-3 rounded-[12px] bg-[#ffffff] px-4 py-4 flex justify-between ">
+            <div><div className="flex items-center justify-between">
+              <p className="text-[18px] font-medium text-[#5e6876]">Дансны үлдэгдэл</p>
+              {/* <EyeIcon /> */}
             </div>
-            <p className="mt-2 text-[16px] font-semibold  text-[#1a2029]">{balanceText} MNT</p>
+            <p className="mt-2 text-[20px] font-semibold  text-[#1a2029]">{balanceText} MNT</p>
+            </div>
+            <div className="flex items-center">
+              <EyeIcon size={34} />
+            </div>
           </section>
+          
 
           <section className="mt-3 rounded-[12px] bg-[#ffffff] px-4 py-4">
-            <p className="text-[16px] font-medium text-[#5e6876]">Хүлээн авагч</p>
+            <p className="text-[18px] font-medium text-[#5e6876]">Хүлээн авагч</p>
             <div className=" flex items-end justify-between gap-3">
               <div>
-                <p className="text-[16px] font-semibold leading-tight text-[#1a2029]">{receiver}</p>
-                <p className="mt-1.5 text-[16px] font-semibold leading-tight text-[#1a2029]">{iban}</p>
+                <p className="text-[16px] font-bold leading-tight text-[#1a2029]">{receiver}</p>
+                <p className="mt-1.5 text-[16px] font-bold leading-tight text-[#1a2029]">{iban}</p>
               </div>
-              <img src={"appLogo.png"} className="h-15 w-15"></img>
+              <img src="/Icon.png" alt="" className="h-15 w-15" />
             </div>
           </section>
 
           <section className="mt-3 rounded-[12px] bg-[#ffffff] px-4 py-4">
-            <p className="text-[16px] font-medium text-[#5e6876]">Гүйлгээний утга</p>
+            <p className="text-[18px] font-medium text-[#5e6876]">Гүйлгээний утга</p>
             <p className="mt-2 text-[16px] font-semibold leading-tight text-[#1a2029] break-words">{note}</p>
           </section>
 
@@ -71,7 +82,7 @@ export default function SuccessDrawer({ amountText, balanceText, timeText, recei
             <button
               type="button"
               onClick={onFinish}
-              className="rounded-[12px] bg-[#02884d] py-3 text-[18px] font-semibold text-white"
+              className="rounded-[12px] bg-[#027846] py-3 text-[18px] font-semibold text-[#e0ece1]"
             >
               Дуусгах
             </button>

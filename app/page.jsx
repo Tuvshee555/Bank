@@ -14,7 +14,7 @@ export default function Home() {
           style={{ paddingTop: "max(env(safe-area-inset-top), 8px)" }}
         >
           {/* <AccountHeader /> */}
-          <img src={"header.jpg"}/>
+          <img src="/header.jpg" alt="" className="w-full" />
           <BalanceCard />
           <QuickActions />
           <LastTransactionAccount />

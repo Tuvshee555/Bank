@@ -52,8 +52,8 @@ export default function QuickActions() {
     //     </div>
     //   ))}
     // </div>
-    <div>
-      <img src={"logos4.jpg"} />
+    <div className="mx-4 mt-3">
+      <img src="/logos4.jpg" alt="" className="w-full rounded-[14px]" />
     </div>
   );
 }
